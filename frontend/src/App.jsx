@@ -28,6 +28,7 @@ import AnnouncementsPage from '@/pages/organizer/AnnouncementsPage';
 import ResultsPublishingPage from '@/pages/organizer/ResultsPublishingPage';
 import CollaborationSpace3DPage from '@/pages/space3d/CollaborationSpace3DPage';
 import ParticipantDashboardPage from '@/pages/participant/ParticipantDashboardPage';
+import TownLobbyPage from '@/pages/TownLobbyPage';
 
 const rootRoute = createRootRoute({
   component: AppShell,
@@ -195,6 +196,15 @@ const participantDashboardRoute = createRoute({
   component: ParticipantDashboardPage,
 });
 
+
+
+const townRoute = createRoute({
+  getParentRoute: () => rootRoute,
+  path: '/town',
+  component: TownLobbyPage,
+});
+
+// Re-add children with new route
 const routeTree = rootRoute.addChildren([
   indexRoute,
   signInRoute,
@@ -223,6 +233,7 @@ const routeTree = rootRoute.addChildren([
   resultsPublishingRoute,
   space3dRoute,
   participantDashboardRoute,
+  townRoute,
 ]);
 
 const router = createRouter({ routeTree });

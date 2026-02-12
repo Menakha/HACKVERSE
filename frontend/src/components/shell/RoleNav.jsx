@@ -21,7 +21,7 @@ const participantNav = [
   { label: 'Collaboration', path: '/collaboration', icon: MessageSquare },
   { label: 'Submissions', path: '/submissions/history', icon: Upload },
   { label: 'Leaderboard', path: '/leaderboard', icon: Trophy },
-  { label: '3D Space', path: '/space3d', icon: Box },
+  { label: '3D Space', path: '/town', icon: Box },
 ];
 
 const organizerNav = [
@@ -49,8 +49,8 @@ export default function RoleNav({ role, onNavigate }) {
     role === 'organizer'
       ? organizerNav
       : role === 'judge'
-      ? judgeNav
-      : participantNav;
+        ? judgeNav
+        : participantNav;
 
   const handleNavigation = (path) => {
     navigate({ to: path });
